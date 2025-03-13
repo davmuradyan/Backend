@@ -21,7 +21,7 @@ builder.Services.AddCors(options => {
 
 // Explicitly configure Kestrel to listen on all network interfaces
 builder.WebHost.ConfigureKestrel(serverOptions => {
-    serverOptions.ListenAnyIP(7082, listenOptions => listenOptions.UseHttps()); // HTTPS
+    serverOptions.ListenAnyIP(8080, listenOptions => listenOptions.UseHttps()); // HTTPS
     serverOptions.ListenAnyIP(5000); // HTTP (for testing)
 });
 
