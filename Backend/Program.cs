@@ -20,7 +20,8 @@ builder.Services.AddCors(options => {
 });
 
 // Explicitly configure Kestrel to listen on all network interfaces
-builder.WebHost.UseUrls("http://*:80", "https://*:443");
+var port = Environment.GetEnvironmentVariable("PORT") ?? "8080"; // Default to 8080 for Azure
+builder.WebHost.UseUrls($"http://*:{port}");
 
 var app = builder.Build();
 
