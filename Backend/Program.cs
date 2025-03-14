@@ -7,6 +7,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSignalR();
 builder.Services.AddSwaggerGen();
+builder.Services.AddSingleton<BusLocationService>();
 
 // Configure CORS to allow requests from any origin
 builder.Services.AddCors(options => {
