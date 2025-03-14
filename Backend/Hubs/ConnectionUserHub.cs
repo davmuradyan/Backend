@@ -4,7 +4,7 @@ using System.Timers; // Make sure to use System.Timers explicitly
 using System.Threading.Tasks;
 
 namespace Backend.Hubs {
-    public class BusSimulationHub : Hub {
+    public class ConnectionUserHub : Hub {
         private static readonly Random _random = new Random();
         private static System.Timers.Timer _timer; // Explicitly specify System.Timers.Timer
 
