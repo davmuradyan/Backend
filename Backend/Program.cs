@@ -1,13 +1,24 @@
 using Backend.Hubs;
+using Backend.Core.Services;
+using Microsoft.EntityFrameworkCore;
+using Backend.Data.DAO;
+using Backend.Core.Services.StopServices;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSignalR();
-builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<BusLocationService>();
+builder.Services.AddSwaggerGen();
+builder.Services.AddControllers();
+
+// Add DbContext with SQL Server connection
+builder.Services.AddDbContext<MainDBContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("MainConnectionString")));
+
+// Add services
+builder.Services.AddScoped<IStopService, StopService>();
 
 // Configure CORS to allow requests from any origin
 builder.Services.AddCors(options => {
@@ -26,19 +37,22 @@ builder.WebHost.UseUrls($"http://*:{port}");
 
 var app = builder.Build();
 
-// Enable Swagger for both Development & Production (optional)
-app.UseSwagger();
-app.UseSwaggerUI();
+// Configure the HTTP request pipeline.
+if (app.Environment.IsDevelopment()) {
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
 
 app.UseHttpsRedirection();
 
 // Use CORS before Authorization
 app.UseCors("CorsPolicy");
-
+app.UseCors("AllowLocalhost");
 app.UseAuthorization();
 
 // Map Controllers and SignalR Hub
 app.MapControllers();
-app.MapHub<ConnectionUserHub>("/Hub");
+app.MapHub<UserHub>("/UserHub");
+app.MapHub<AdminHub>("/AdminHub");
 
 app.Run();
