@@ -37,6 +37,9 @@ builder.WebHost.UseUrls($"http://*:{port}");
 
 var app = builder.Build();
 
+// Force initialization of BusLocationService
+var busLocationService = app.Services.GetRequiredService<BusLocationService>();
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment()) {
     app.UseSwagger();
