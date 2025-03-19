@@ -11,6 +11,7 @@ public class BusLocationService {
     }
     
     private async void SendFakeBusLocation(object state) {
+        Console.WriteLine("Coords are being sent");
         await _hubContext.Clients.All.SendAsync("ReceiveFakeBusLocation", "Bus location update");
     }
 }
