@@ -7,15 +7,23 @@ namespace Backend.Data.Entities {
         public int Edge_id { get; set; }
 
         [Required]
-        int Start_stop_id { get; set; }
+        public int Start_stop_id { get; set; }
 
         [ForeignKey(nameof(Start_stop_id))]
-        StopEntity? Start_stop { get; set; }
+        public StopEntity? Start_stop { get; set; }
 
         [Required]
-        int End_stop_id { get; set; }
+        public int End_stop_id { get; set; }
 
         [ForeignKey(nameof(End_stop_id))]
-        StopEntity? End_stop { get; set; }
+        public StopEntity? End_stop { get; set; }
+
+        [Required]
+        public float Duration { get; set; }
+
+        [Required]
+        public float Distance { get; set; }
+
+        public float AllowedSpeed { get; set; }
     }
 }

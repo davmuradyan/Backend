@@ -12,12 +12,12 @@ namespace Backend.Controllers
 
         [HttpGet("AddStop")]
         public IActionResult AddStop(string name, double latitude, double longitude) {
-            return Ok(stopService.AddStop(name, latitude, longitude));
+            return Ok(stopService.CreateStop(name, latitude, longitude));
         }
 
         [HttpDelete("DeleteStop")]
         public IActionResult DeleteStop(int Stop_id) {
-            return Ok(stopService.RemoveStop(Stop_id));
+            return Ok(stopService.DeleteStop(Stop_id));
         }
     }
 }

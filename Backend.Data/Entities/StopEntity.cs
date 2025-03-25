@@ -1,5 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Backend.Data.Entities {
     public record StopEntity {
@@ -15,5 +15,9 @@ namespace Backend.Data.Entities {
 
         [Required]
         public double Longitude { get; set; }
+
+        // Add navigation properties for the edges
+        public ICollection<EdgeEntity> StartEdges { get; set; } = new List<EdgeEntity>();
+        public ICollection<EdgeEntity> EndEdges { get; set; } = new List<EdgeEntity>();
     }
 }
