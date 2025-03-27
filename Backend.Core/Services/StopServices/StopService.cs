@@ -76,7 +76,7 @@ namespace Backend.Core.Services.StopServices {
 
         ////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public async Task<StopEntity?> UpdateStopAsync(int id, string name = "", double? latitude = null, double? longitude = null) {
+        public async Task<StopEntity?> UpdateStopAsync(int id, string? name = "", double? latitude = null, double? longitude = null) {
             try {
                 var stop = await _context.Stops.FindAsync(id);
 

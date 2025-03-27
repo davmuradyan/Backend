@@ -32,7 +32,7 @@ namespace Backend.Core.Services.StopServices {
         /// <param name="latitude">The new latitude.</param>
         /// <param name="longitude">The new longitude.</param>
         /// <returns>The updated Stop entity, or null if not found.</returns>
-        Task<StopEntity?> UpdateStopAsync(int id, string name, double? latitude, double? longitude);
+        Task<StopEntity?> UpdateStopAsync(int id, string? name, double? latitude, double? longitude);
 
 
         /// <summary>
