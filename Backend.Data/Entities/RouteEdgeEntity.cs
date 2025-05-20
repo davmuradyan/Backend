@@ -1,24 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-
-namespace Backend.Data.Entities {
-    public class RouteEdgeEntity {
-        [Key]
-        public int RouteEdge_id { get; set; }
-
-        [Required]
-        public int Route_id {  get; set; }
-
-        [ForeignKey(nameof(Route_id))]
-        public RouteEntity? Route {  get; set; }
-
-        [Required]
-        public int Edge_id { get; set; }
-
-        [ForeignKey(nameof(Edge_id))]
-        public EdgeEntity? Edge { get; set; }
-
-        [Required]
+﻿namespace Backend.Data.Entities {
+    public record RouteEdgeEntity {
+        public int REID { get; set; }
+        public int RouteID { get; set; }
+        public int EdgeID { get; set; }
         public int Order { get; set; }
+        public bool Direction { get; set; }
+
+        public RouteEntity? Route { get; set; }
+        public EdgeEntity? Edge { get; set; }
     }
 }

@@ -1,23 +1,11 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-
-namespace Backend.Data.Entities {
+﻿namespace Backend.Data.Entities {
     public record StopEntity {
-        [Key]
-        public int Stop_id { get; set; }
-
-        [Required]
-        [StringLength(50)]
-        public string Name { get; set; } = string.Empty;
-
-        [Required]
-        public double Latitude { get; set; }
-
-        [Required]
+        public int StopID { get; set; }
+        public string? StopName { get; set; }
+        public string? StopAddress { get; set; }
         public double Longitude { get; set; }
-
-        // Add navigation properties for the edges
-        public ICollection<EdgeEntity> StartEdges { get; set; } = new List<EdgeEntity>();
-        public ICollection<EdgeEntity> EndEdges { get; set; } = new List<EdgeEntity>();
+        public double Latitude { get; set; }
+        public bool IsTerminal { get; set; }
+        public DateTime CreationDate { get; set; }
     }
 }

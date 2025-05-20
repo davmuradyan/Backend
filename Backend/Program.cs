@@ -1,5 +1,4 @@
 using Backend.Hubs;
-using Backend.Core.Services;
 using Microsoft.EntityFrameworkCore;
 using Backend.Data.DAO;
 using Backend.Core.Services.StopServices;

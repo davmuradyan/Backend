@@ -1,29 +1,13 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-
-namespace Backend.Data.Entities {
+﻿namespace Backend.Data.Entities {
     public record EdgeEntity {
-        [Key]
-        public int Edge_id { get; set; }
+        public int EdgeID { get; set; }
+        public int StopA { get; set; }
+        public int StopB { get; set; }
+        public double? Distance { get; set; }
+        public double? ExpectedTime { get; set; }
+        public double? ExpectedSpeed { get; set; }
 
-        [Required]
-        public int Start_stop_id { get; set; }
-
-        [ForeignKey(nameof(Start_stop_id))]
-        public StopEntity? Start_stop { get; set; }
-
-        [Required]
-        public int End_stop_id { get; set; }
-
-        [ForeignKey(nameof(End_stop_id))]
-        public StopEntity? End_stop { get; set; }
-
-        [Required]
-        public float Duration { get; set; }
-
-        [Required]
-        public float Distance { get; set; }
-
-        public float AllowedSpeed { get; set; }
+        public StopEntity? StopARef { get; set; }
+        public StopEntity? StopBRef { get; set; }
     }
 }
