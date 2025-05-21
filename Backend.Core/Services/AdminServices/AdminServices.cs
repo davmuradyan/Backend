@@ -39,14 +39,14 @@ namespace Backend.Core {
             var admin = await _context.Admins.FindAsync(id);
             if (admin == null) return false;
 
-            admin.Name = dto.Name;
-            admin.Surname = dto.Surname;
-            admin.CityID = dto.CityID;
-            admin.Type = dto.Type;
-            admin.Username = dto.Username;
-            admin.Password = dto.Password;
-            admin.Email = dto.Email;
-            admin.Phone = dto.Phone;
+            if (dto.Name is not null) admin.Name = dto.Name;
+            if (dto.Surname is not null) admin.Surname = dto.Surname;
+            if (dto.CityID.HasValue) admin.CityID = dto.CityID.Value;
+            if (dto.Type is not null) admin.Type = dto.Type;
+            if (dto.Username is not null) admin.Username = dto.Username;
+            if (dto.Password is not null) admin.Password = dto.Password;
+            if (dto.Email is not null) admin.Email = dto.Email;
+            if (dto.Phone is not null) admin.Phone = dto.Phone;
 
             await _context.SaveChangesAsync();
             return true;

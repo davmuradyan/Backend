@@ -1,5 +1,5 @@
 ﻿namespace Backend.Data.Entities {
-    public record UserEntity {
+    public class UserEntity {
         public int UserID { get; set; }
         public required string IP { get; set; }
         public DateTime ConnectionTime { get; set; }

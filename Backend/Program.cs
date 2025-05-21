@@ -1,7 +1,6 @@
 using Backend.Hubs;
 using Microsoft.EntityFrameworkCore;
 using Backend.Data.DAO;
-using Backend.Core.Services.StopServices;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,7 +16,7 @@ builder.Services.AddDbContext<MainDBContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("MainConnectionString")));
 
 // Add services
-builder.Services.AddScoped<IStopService, StopService>();
+
 
 // Configure CORS to allow requests from any origin
 builder.Services.AddCors(options => {

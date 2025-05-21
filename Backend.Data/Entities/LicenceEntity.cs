@@ -1,5 +1,5 @@
 ﻿namespace Backend.Data.Entities {
-    public record LicenceEntity {
+    public class LicenceEntity {
         public int LicenceID { get; set; }
         public int CountryID { get; set; }
         public string? IDNum { get; set; }

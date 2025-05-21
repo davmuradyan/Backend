@@ -1,5 +1,5 @@
 ﻿namespace Backend.Core {
-    public class CreateAdminDto {
+    public record CreateAdminDto {
         public required string Name { get; set; }
         public required string Surname { get; set; }
         public int CityID { get; set; }

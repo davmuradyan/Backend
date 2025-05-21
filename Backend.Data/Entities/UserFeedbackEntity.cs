@@ -1,5 +1,5 @@
 ﻿namespace Backend.Data.Entities {
-    public record UserFeedbackEntity {
+    public class UserFeedbackEntity {
         public int UserFeedbackID { get; set; }
         public int UserID { get; set; }
         public string? Email { get; set; }

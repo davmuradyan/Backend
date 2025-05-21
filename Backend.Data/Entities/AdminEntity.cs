@@ -1,5 +1,7 @@
-﻿namespace Backend.Data.Entities {
-    public record AdminEntity {
+﻿using Microsoft.EntityFrameworkCore;
+
+namespace Backend.Data.Entities {
+    public class AdminEntity {
         public int AdminID { get; set; }
         public required string Name { get; set; }
         public required string Surname { get; set; }

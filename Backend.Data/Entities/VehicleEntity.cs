@@ -1,5 +1,5 @@
 ﻿namespace Backend.Data.Entities {
-    public record VehicleEntity {
+    public class VehicleEntity {
         public int VehicleID { get; set; }
         public required string PlateNum { get; set; }
         public int VehicleTypeID { get; set; }

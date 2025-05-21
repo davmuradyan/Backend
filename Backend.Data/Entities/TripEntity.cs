@@ -1,5 +1,5 @@
 ﻿namespace Backend.Data.Entities {
-    public record TripEntity {
+    public class TripEntity {
         public int TripID { get; set; }
         public DateTime StartTime { get; set; }
         public DateTime? EndTime { get; set; }

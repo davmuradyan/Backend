@@ -9,6 +9,6 @@ namespace Backend.Data.Entities {
         public DateTime Created { get; set; }
         public DateTime Updated { get; set; }
         public int CountryID { get; set; }
-        public CountryEntity Country { get; set; }
+        public CountryEntity? Country { get; set; }
     }
 }

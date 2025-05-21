@@ -1,5 +1,5 @@
 ﻿namespace Backend.Data.Entities {
-    public record DriverEntity {
+    public class DriverEntity {
         public int DriverID { get; set; }
         public string? Name { get; set; }
         public string? Surname { get; set; }

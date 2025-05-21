@@ -1,5 +1,5 @@
 ﻿namespace Backend.Data.Entities {
-    public record RouteEdgeEntity {
+    public class RouteEdgeEntity {
         public int REID { get; set; }
         public int RouteID { get; set; }
         public int EdgeID { get; set; }

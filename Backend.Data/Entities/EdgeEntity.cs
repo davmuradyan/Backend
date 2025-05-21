@@ -1,5 +1,5 @@
 ﻿namespace Backend.Data.Entities {
-    public record EdgeEntity {
+    public class EdgeEntity {
         public int EdgeID { get; set; }
         public int StopA { get; set; }
         public int StopB { get; set; }

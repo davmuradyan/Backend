@@ -1,5 +1,5 @@
 ﻿namespace Backend.Data.Entities {
-    public record GPSEntity {
+    public class GPSEntity {
         public int GpsID { get; set; }
         public required string ID { get; set; }
 

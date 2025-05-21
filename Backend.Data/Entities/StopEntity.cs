@@ -1,5 +1,5 @@
 ﻿namespace Backend.Data.Entities {
-    public record StopEntity {
+    public class StopEntity {
         public int StopID { get; set; }
         public string? StopName { get; set; }
         public string? StopAddress { get; set; }

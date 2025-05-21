@@ -1,5 +1,5 @@
 ﻿namespace Backend.Data.Entities {
-    public record RouteEntity {
+    public class RouteEntity {
         public int RouteID { get; set; }
         public int RouteNum { get; set; }
         public required string StartHour { get; set; }
