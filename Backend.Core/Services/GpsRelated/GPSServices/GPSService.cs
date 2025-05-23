@@ -15,14 +15,14 @@ namespace Backend.Core.Services.GpsRelated.GPSServices
 
         public async Task<IEnumerable<GPSEntity>> GetAllGPSAsync()
         {
-            return await _context.GPS
+            return await _context.GPSDevices
                 .Include(g => g.GPSModel)
                 .ToListAsync();
         }
 
         public async Task<GPSEntity?> GetGPSByIdAsync(int id)
         {
-            return await _context.GPS
+            return await _context.GPSDevices
                 .Include(g => g.GPSModel)
                 .FirstOrDefaultAsync(g => g.GpsID == id);
         }
@@ -35,7 +35,7 @@ namespace Backend.Core.Services.GpsRelated.GPSServices
                 GPSModelID = dto.GPSModelID
             };
 
-            _context.GPS.Add(gps);
+            _context.GPSDevices.Add(gps);
             await _context.SaveChangesAsync();
 
             return gps;
@@ -43,7 +43,7 @@ namespace Backend.Core.Services.GpsRelated.GPSServices
 
         public async Task<bool> UpdateGPSAsync(int id, UpdateGPSDto dto)
         {
-            var gps = await _context.GPS.FindAsync(id);
+            var gps = await _context.GPSDevices.FindAsync(id);
             if (gps == null) return false;
 
             if (dto.ID != null) gps.ID = dto.ID;
@@ -55,10 +55,10 @@ namespace Backend.Core.Services.GpsRelated.GPSServices
 
         public async Task<bool> DeleteGPSAsync(int id)
         {
-            var gps = await _context.GPS.FindAsync(id);
+            var gps = await _context.GPSDevices.FindAsync(id);
             if (gps == null) return false;
 
-            _context.GPS.Remove(gps);
+            _context.GPSDevices.Remove(gps);
             await _context.SaveChangesAsync();
             return true;
         }

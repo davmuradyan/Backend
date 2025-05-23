@@ -60,15 +60,15 @@ builder.Services.AddScoped<ILicenceService, LicenceService>();
 
 // Route related ////////////////////////////////////////////////
 builder.Services.AddScoped<IEdgeService, EdgeService>();
-builder.Services.AddScoped<IRouteEdgeService, IRouteEdgeService>();
-builder.Services.AddScoped<IRouteService, IRouteService>();
-builder.Services.AddScoped<IStopService, IStopService>();
-builder.Services.AddScoped<ITripService, ITripService>();
+builder.Services.AddScoped<IRouteEdgeService, RouteEdgeService>();
+builder.Services.AddScoped<IRouteService, RouteService>();
+builder.Services.AddScoped<IStopService, StopService>();
+builder.Services.AddScoped<ITripService, TripService>();
 
 // Vehicle related //////////////////////////////////////////////
-builder.Services.AddScoped<IManufacturerService, IManufacturerService>();
-builder.Services.AddScoped<IVehicleService, IVehicleService>();
-builder.Services.AddScoped<IVehicleTypeService, IVehicleTypeService>();
+builder.Services.AddScoped<IManufacturerService, ManufacturerService>();
+builder.Services.AddScoped<IVehicleService, VehicleService>();
+builder.Services.AddScoped<IVehicleTypeService, VehicleTypeService>();
 
 //////////////////////////////////////////////////////////////////////////////
 

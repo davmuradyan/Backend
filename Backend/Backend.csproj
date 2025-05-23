@@ -29,4 +29,8 @@
     <ProjectReference Include="..\Backend.Data\Backend.Data.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Controllers\PersonRelated\" />
+  </ItemGroup>
+
 </Project>
